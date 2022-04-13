@@ -1,10 +1,4 @@
-#!/bin/sh
-#
-# David Hozza 04/10/2022
-#
-# Script to illustate 
-# 1. Variable that is passed into the script ex: $1
-# 2. Assigned in the script variable, ex: LOGFILE
+
 # This script can be called from another shell to automate the process.
 #
 # PARAMS passed into the script  {script.sh} {value}
@@ -22,8 +16,13 @@ BASEDIR=/home/dmh411/topsecret
 #
 # ---------- List all of our file details and log it -----------------------
 echo "Logging the details of files under '$BASEDIR' "
+echo "The IP address your entered is" $ARRAYIP
 ls -lsa $BASEDIR >> $LOGFILE
 echo "logging completed"
 #
+# -------- Show my info with whoami to show how to run a command in a script -------------
+whoami
 #
+# ------- Add a date time stamp to your log -----------------------------
 #
+echo "Logging with a data time stamp" > $LOGFILE.`date +%m%d%y`
