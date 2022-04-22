@@ -17,7 +17,7 @@ then
         echo "Your BP is NORMAL"
 fi
 #
-if [ $SYSTO -ge 120 ] && [ $SYSTO -le 129] && [ $DIASTO -lt 80 ]
+if [ $SYSTO -ge 120 ] && [ $SYSTO -le 129 ] && [ $DIASTO -lt 80 ]
 then
         echo "Your BP is Elevated"
 fi
