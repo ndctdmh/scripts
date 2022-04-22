@@ -1,4 +1,4 @@
-
+#!/bin/sh
 # This script can be called from another shell to automate the process.
 #
 # PARAMS passed into the script  {script.sh} {value}
