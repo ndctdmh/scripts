@@ -1,28 +1,20 @@
 #!/bin/sh
-# This script can be called from another shell to automate the process.
+#
+# This script will show examples of how variables can be used and logging can be done ny date and time. 
+# It will also illustrate the use of hashes to check the integrity of items. 
 #
 # PARAMS passed into the script  {script.sh} {value}
-# - IP adress
+# - FILENAME is the complete path to the file to be hashed and logged.
 #
 # ==============================================================================
 #   VARIABLES
 # ==============================================================================
-ARRAYIP=$1
-LOGFILE=/home/dmh411/logs
-BASEDIR=/home/dmh411/topsecret
+FILENAME=$1
+LOGDIR=/var/log/testlogs
 #
-# ---------- Clean the Log for a fresh run or ceate first time ------------
-> $LOGFILE
 #
-# ---------- List all of our file details and log it -----------------------
-echo "Logging the details of files under '$BASEDIR' "
-echo "The IP address your entered is" $ARRAYIP
-ls -lsa $BASEDIR >> $LOGFILE
-echo "logging completed"
-#
-# -------- Show my info with whoami to show how to run a command in a script -------------
-whoami
-#
-# ------- Add a date time stamp to your log -----------------------------
-#
-echo "Logging with a data time stamp" > $LOGFILE.`date +%m%d%y`
+# ---------- log the sha256 hash of the shadow file and add a time stamp to the log -----------------------
+sha256sum $FILENAME >> $LOGDIR.`date +%m%d%y`
+echo "Hash is written to the log file"
+echo "Log now contains"
+cat  $LOGDIR.`date +%m%d%y`
