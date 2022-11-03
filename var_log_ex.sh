@@ -1,3 +1,4 @@
+#!/bin/sh
 # This script will show examples of how variables can be used and logging can be done ny date and time. 
 # It will also illustrate the use of hashes to check the integrity of items. 
 #
